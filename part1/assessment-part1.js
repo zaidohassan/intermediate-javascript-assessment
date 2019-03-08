@@ -111,17 +111,17 @@ mustang.drive();
 // Your method may be passed punctuation, numbers or other non-letter characters
 // and should neither modify them nor break when encountering them.
 
-String.prototype.grammarPolice = function() {
+String.prototype.grammarPolice = function(str) {
   var newStr = this.toLowerCase().split("");
   console.log(newStr);
 
   for (var i = 0; i < newStr.length; i++) {
-    if (newStr[i] === " ") {
+    newStr[0] = newStr[0].toUpperCase();
+    if (newStr[i] == " ") {
       newStr[i + 1] = newStr[i + 1].toUpperCase();
-      console.log(newStr.join(""));
-      return newStr.join("");
     }
   }
+  return newStr.join("");
 };
 
 "THIS IS A TEST".grammarPolice();
