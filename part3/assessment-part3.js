@@ -12,9 +12,15 @@
 // with the animal as the context, and 'Trogdor' as a parameter.
 // return the result of your updateAnimal invocation
 
-// CODE HERE...
-
-
+function callBinding(magicAnimals, updateAnimal, id) {
+  for (let i = 0; i < magicAnimals.length; i++) {
+    if (magicAnimals[i].id === id) {
+      var obj = magicAnimals[i];
+      updateAnimal.call(obj, "Trogdor");
+      return obj;
+    }
+  }
+}
 
 // *************
 // * PROBLEM 2 *
@@ -27,9 +33,15 @@
 // with the context of the animal, and the array ['being majestic', 'eating rainbows'] as a parameter.
 // return the result of your updateAnimal invocation
 
-// CODE HERE...
-
-
+function applyBinding(magicAnimals, updateAnimal, id) {
+  for (let i = 0; i < magicAnimals.length; i++) {
+    if (magicAnimals[i].id === id) {
+      var obj = magicAnimals[i];
+      updateAnimal.apply(obj, ["being majestic", "eating rainbows"]);
+      return obj;
+    }
+  }
+}
 
 // *************
 // * PROBLEM 3 *
@@ -46,10 +58,6 @@
 // NOTE: Manually invoking your function here will alter the 'foo' variable before tests run, causing them to fail.
 
 var foo;
-
-// CODE HERE...
-
-
 
 // *************
 // * PROBLEM 4 *
